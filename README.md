@@ -34,3 +34,36 @@ This model contains all the attributes that a model has, and also contains all t
 The example for anemic and rich domain model can be seen in the project.
 
 DDD (Domain Driven Design) basically is a concept to create the application based on the business capabilities. So in the business, there are usually the same objects but have different function between every unit. Example, we have the object “User”. The “User” in finance is responsible for the accounting, while the “User” in marketing is responsible for the promotion. From my understanding, in DDD, we have to create 2 “User” domain for each unit, and cannot place the function in the same domain. The example can be seen in the repository.
+
+# Project structure
+
+This is the planned structure that will be applied in the project. 
+Backend\
+|-- Service1\
+&emsp;|-- Route\
+&emsp;&emsp; [domain]-route.js\
+&emsp;&emsp; index.js\
+&emsp;|-- Controller\
+&emsp;&emsp; [domain]-controller.js\
+&emsp;&emsp; index.js\
+&emsp;|-- Usecase\
+&emsp;&emsp;|-- [domain]\
+&emsp;&emsp;&emsp; [functionname].js\
+&emsp;&emsp;|-- ...\
+&emsp;&emsp; index.js\
+&emsp;|-- Domain\
+&emsp;&emsp;|-- [context1]\
+&emsp;&emsp;&emsp; [domain].js\
+&emsp;&emsp;|-- [context2]\
+&emsp;&emsp;&emsp; [domain].js\
+&emsp;&emsp; index.js\
+&emsp;|-- Infrastructure\
+&emsp;&emsp;|-- database\
+&emsp;&emsp;&emsp;|-- [database_framework]\
+&emsp;&emsp;&emsp;&emsp;|-- db.js\
+&emsp;&emsp;|-- index.js\
+&emsp;app.js\
+|-- Service2\
+&emsp;|-- ...
+
+
