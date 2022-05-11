@@ -37,15 +37,16 @@ DDD (Domain Driven Design) basically is a concept to create the application base
 
 # Project structure
 
-This is the planned structure that will be applied in the project. 
+This is the planned structure that will be applied in the project. \
 Backend\
 |-- Service1\
 &emsp;|-- Route\
 &emsp;&emsp; [domain]-route.js\
-&emsp;&emsp; index.js\
 &emsp;|-- Controller\
 &emsp;&emsp; [domain]-controller.js\
 &emsp;&emsp; index.js\
+&emsp;|-- DTO\
+&emsp;&emsp; [domain]DTO.js\
 &emsp;|-- Usecase\
 &emsp;&emsp;|-- [domain]\
 &emsp;&emsp;&emsp; [functionname].js\
