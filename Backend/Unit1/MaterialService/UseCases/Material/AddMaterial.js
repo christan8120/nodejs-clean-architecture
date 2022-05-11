@@ -1,4 +1,4 @@
-import makeMaterial from "../../Domain/Unit1/index.js";
+import makeMaterial from "../../Domain/index.js";
 
 const buildAddMaterial = ({db}) => {
   const addMaterial = (materialData) => {        

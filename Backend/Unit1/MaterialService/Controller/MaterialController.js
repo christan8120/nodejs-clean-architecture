@@ -49,11 +49,11 @@ const makeGetMaterial = ({ getMaterial, materialDTO }) => {
 const makeUpdateMaterial = ({ updateMaterial, materialDTO }) => {
   const _updateMaterial = (req, res, next) => {
     try{
-      const { Id, Name, IsActive } = req.body;      
+      const { Id, Name, IsActive } = req.body;          
       const updatedMaterial = updateMaterial({ Id, Name, IsActive});      
       res.status(200).json(materialDTO(updatedMaterial));
     }
-    catch(err){      
+    catch(err){            
       return next();
     }
   }
