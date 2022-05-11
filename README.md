@@ -71,7 +71,10 @@ Backend\
 
 1. Go to the service that want to be run
 2. In terminal, run command "npm install" to install all the needed dependencies
-3. After that, run command "npm start" to run the application. \
+3. After that, run command "npm start" to run the application.
+4. Go to the browser and go to http://localhost:{port}/material
 
-NOTE: If something goes wrong while running the "npm start", try to change the port number.
+NOTE: If something goes wrong while running the "npm start", try to change the port number. You can change it in the app.js file.
+
+
 
