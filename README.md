@@ -67,4 +67,11 @@ Backend\
 |-- Service2\
 &emsp;|-- ...
 
+# How to run
+
+1. Go to the service that want to be run
+2. In terminal, run command "npm install" to install all the needed dependencies
+3. After that, run command "npm start" to run the application. \
+
+NOTE: If something goes wrong while running the "npm start", try to change the port number.
 
