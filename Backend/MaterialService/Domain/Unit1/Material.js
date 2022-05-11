@@ -59,3 +59,28 @@ const buildMakeMaterial = ({}) => {
 }
 
 export default buildMakeMaterial;
+
+//anemic domain model is a model that does not contains any business rules. 
+//All it does just get and set the attribute of a model/entity.
+//example of anemic domain model
+
+/*
+const buildMakeMaterialAnemic = ({}) => {
+  const makeMaterial = ({
+    Id,
+    Name,
+    IsActive,    
+    CreatedOn = Date.now(),
+    ModifiedOn = Date.now()
+  }) => {    
+    return {
+      Id,
+      Name,
+      IsActive,
+      CreatedOn,
+      ModifiedOn
+    }
+  }
+
+  return makeMaterial;
+}*/
