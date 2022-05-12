@@ -1,8 +1,8 @@
 //const makeMaterial = require("../../Domain/Unit1");
 
 const buildGetMaterialById = ({db}) => {
-  const getMaterialById = ({id}) => {
-    const material = db.getById(id);
+  const getMaterialById = async ({id}) => {
+    const material = await db.getByCustom({MaterialId: id});    
     return material;
   }  
 
@@ -10,8 +10,8 @@ const buildGetMaterialById = ({db}) => {
 }
 
 const buildGetMaterial = ({db}) => {
-  const getMaterial = () => {    
-    const material = db.get();     
+  const getMaterial = async () => {    
+    const material = await db.get();       
     return material;
   }
 

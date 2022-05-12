@@ -1,10 +1,10 @@
 import makeMaterial from "../../Domain/index.js";
 
 const buildRemoveMaterial = ({db}) => {
-  const removeMaterial = ({id}) => {
-    const oldMaterial = db.getById(id);    
+  const removeMaterial = async ({id}) => {
+    const oldMaterial = await db.getByCustom({MaterialId: id});    
     const material = makeMaterial(oldMaterial).prepareSoftDelete();
-    db.update(material);
+    db.update(oldMaterial.id, material);
     return material;
   }
 

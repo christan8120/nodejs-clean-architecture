@@ -70,10 +70,14 @@ Backend\
 
 1. Go to the service that want to be run
 2. In terminal, run command "npm install" to install all the needed dependencies
-3. After that, run command "npm start" to run the application.
-4. Go to the browser and go to http://localhost:{port}/material
+3. Change the connection string and db name in /Infrastructure/Database/MongoDB/index.js with yours.
+4. Do not forget to create the collections in your Mongo DB. The name of the collection should be "materials" but you can change it and follow the one in the /UseCases/Material/index.js file.
+5. After that, run command "npm start" to run the application.
+6. Go to the browser or postman and go to http://localhost:{port}/material
+7. The sample data for POST or PUT method can be found in sampledata.js inside the service folder.
 
 NOTE: If something goes wrong while running the "npm start", try to change the port number. You can change it in the app.js file.
 
+NOTE: you can change the database from MongoDB to LocalVariable by simply update the import makeDB path in the /UseCases/Material/index.js file. But if you want to use another database, for example MySQL, you can create a new MySQL folder then implement the method inside DB.js and index.js file. Remember that the method and parameter should be the same with other DB.js file, to avoid changes in the business logic (Usecase layer).
 
 

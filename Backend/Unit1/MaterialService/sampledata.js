@@ -1,16 +1,16 @@
 [
   {
-    "Id": "1",
+    "MaterialId": "1",
     "Name": "Wood",
     "IsActive": 1
   },
   {
-    "Id": "2",
+    "MaterialId": "2",
     "Name": "Plastic",
     "IsActive": 1
   },
   {
-    "Id": "3",
+    "MaterialId": "3",
     "Name": "Iron",
     "IsActive": 1
   } 

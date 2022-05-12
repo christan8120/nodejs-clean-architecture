@@ -1,10 +1,10 @@
 import makeMaterial from "../../Domain/index.js";
 
 const buildUpdateMaterial = ({db}) => {
-  const updateMaterial = (materialData) => {    
-    const oldMaterial = db.getById(materialData.Id);
+  const updateMaterial = async (materialData) => {      
+    const oldMaterial = await db.getByCustom({MaterialId: materialData.MaterialId});    
     const material = makeMaterial(oldMaterial).prepareUpdate(materialData);        
-    db.update(material);
+    db.update(oldMaterial.id, material);    
     return material;
   } 
 
