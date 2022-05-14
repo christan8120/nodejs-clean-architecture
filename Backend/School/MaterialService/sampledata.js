@@ -1,6 +1,6 @@
 [  
   {
-    "Id": "1",
+    "MaterialId": "1",
     "Name": "Science",
     "Level": "Elementary",
     "IsMandatory": "0",
@@ -8,7 +8,7 @@
     "IsActive": 1
   },
   {
-    "Id": "2",
+    "MaterialId": "2",
     "Name": "Social",
     "Level": "Middle",
     "IsMandatory": "1",
@@ -16,7 +16,7 @@
     "IsActive": 1
   },
   {
-    "Id": "3",
+    "MaterialId": "3",
     "Name": "Math",
     "Level": "High",
     "IsMandatory": "1",
@@ -26,15 +26,15 @@
 
   //InReview
   {
-    "Id" : "1",
+    "MaterialId" : "1",
     "IsInReview": 1
   },
   {
-    "Id" : "2",
+    "MaterialId" : "2",
     "IsInReview": 1
   },
   {
-    "Id" : "3",
+    "MaterialId" : "3",
     "IsInReview": 1
   }
 ]

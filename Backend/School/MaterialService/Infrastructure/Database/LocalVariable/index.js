@@ -4,6 +4,11 @@ const db = () => {
   return data;
 }
 
-const makeDB = buildMakeDB({db: db()});
+const makeDB = (table) => {
+  return buildMakeDB({
+    db: db(), 
+    table: table
+  });
+}
 
 export default makeDB;

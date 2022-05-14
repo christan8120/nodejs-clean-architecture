@@ -1,6 +1,6 @@
 const buildMakeMaterial = ({}) => {
   const makeMaterial = ({
-    Id,
+    MaterialId,
     Name,
     Level,
     IsMandatory,
@@ -9,7 +9,7 @@ const buildMakeMaterial = ({}) => {
     CreatedOn = Date.now(),
     ModifiedOn = Date.now()
   }) => {    
-    if(!Id){
+    if(!MaterialId){
       throw new Error("Material must have an id");
     }
     if(!Name){
@@ -29,7 +29,7 @@ const buildMakeMaterial = ({}) => {
     }
     
     return Object.freeze({
-      getId: () => Id,
+      getMaterialId: () => MaterialId,
       getName: () => Name,
       getLevel: () => Level,
       getIsMandatory: () => IsMandatory,
@@ -42,7 +42,7 @@ const buildMakeMaterial = ({}) => {
       },      
       prepareAdd: () => {
         return {
-          Id, 
+          MaterialId, 
           Name,
           Level,
           IsMandatory,
@@ -54,7 +54,7 @@ const buildMakeMaterial = ({}) => {
       },
       prepareUpdate: (newMaterial) => {                
         return {
-          Id: newMaterial.Id,
+          MaterialId: newMaterial.MaterialId,
           Name: newMaterial.Name,
           Level: newMaterial.Level,
           IsMandatory: newMaterial.IsMandatory,
@@ -66,7 +66,7 @@ const buildMakeMaterial = ({}) => {
       },
       prepareSoftDelete: () => {
         return {
-          Id,
+          MaterialId,
           Name,
           Level,
           IsMandatory,
@@ -78,7 +78,7 @@ const buildMakeMaterial = ({}) => {
       },
       prepareUpdateMaterialInReview: (_IsInReview) => {
         return {
-          Id,
+          MaterialId,
           Name,
           Level,
           IsMandatory,

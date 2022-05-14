@@ -1,8 +1,8 @@
 const makePostMaterial = ({ addMaterial, materialDTO }) => {
   const postMaterial = (req, res, next) => {
     try{            
-      const { Id, Name, Level, IsMandatory, IsInReview, IsActive } = req.body
-      const addedMaterial = addMaterial({Id, Name, Level, IsMandatory, IsInReview, IsActive});      
+      const { MaterialId, Name, Level, IsMandatory, IsInReview, IsActive } = req.body
+      const addedMaterial = addMaterial({MaterialId, Name, Level, IsMandatory, IsInReview, IsActive});      
       res.status(200).json(materialDTO(addedMaterial));
     }
     catch{
@@ -14,9 +14,9 @@ const makePostMaterial = ({ addMaterial, materialDTO }) => {
 }
 
 const makeGetMaterialById = ({ getMaterialById, materialDTO }) => {
-  const _getMaterialById = (req, res, next) => {
+  const _getMaterialById = async (req, res, next) => {
     try{      
-      const materials = getMaterialById({id: req.params.id})
+      const materials = await getMaterialByCustom({MaterialId: req.params.id})
 
       if(!materials){
         res.status(404).json("No data found");
@@ -33,9 +33,9 @@ const makeGetMaterialById = ({ getMaterialById, materialDTO }) => {
 }
 
 const makeGetMaterial = ({ getMaterial, materialDTO }) => {
-  const _getMaterial = (req, res, next) => {
+  const _getMaterial = async (req, res, next) => {
     try{
-      const materials = getMaterial();
+      const materials = await getMaterial();
       res.status(200).json(materials.map(m => { return materialDTO(m)}));
     }
     catch{
@@ -47,10 +47,10 @@ const makeGetMaterial = ({ getMaterial, materialDTO }) => {
 }
 
 const makeUpdateMaterial = ({ updateMaterial, materialDTO }) => {
-  const _updateMaterial = (req, res, next) => {
+  const _updateMaterial = async (req, res, next) => {
     try{
-      const { Id, Name, Level, IsMandatory, IsInReview, IsActive } = req.body;          
-      const updatedMaterial = updateMaterial({ Id, Name, Level, IsMandatory, IsInReview, IsActive});      
+      const { MaterialId, Name, Level, IsMandatory, IsInReview, IsActive } = req.body;          
+      const updatedMaterial = await updateMaterial({ MaterialId, Name, Level, IsMandatory, IsInReview, IsActive});      
       res.status(200).json(materialDTO(updatedMaterial));
     }
     catch(err){            
@@ -62,10 +62,10 @@ const makeUpdateMaterial = ({ updateMaterial, materialDTO }) => {
 }
 
 const makeUpdateMaterialInReview = ({ updateMaterialInReview, materialDTO}) => {
-  const _updatedMaterialInReview = (req, res, next) => {
+  const _updatedMaterialInReview = async (req, res, next) => {
     try{
-      const { Id, IsInReview } = req.body;      
-      const updatedMaterial = updateMaterialInReview(Id, IsInReview);
+      const { MaterialId, IsInReview } = req.body;      
+      const updatedMaterial = await updateMaterialInReview(MaterialId, IsInReview);
       res.status(200).json(materialDTO(updatedMaterial));
     }
     catch(err){
@@ -78,10 +78,10 @@ const makeUpdateMaterialInReview = ({ updateMaterialInReview, materialDTO}) => {
 }
 
 const makeDeleteMaterial = ({ deleteMaterial, materialDTO}) => {
-  const _deleteMaterial = (req, res, next) => {
+  const _deleteMaterial = async (req, res, next) => {
     try{
-      const id = req.params.id;
-      const deletedMaterial = deleteMaterial({id: id});
+      const MaterialId = req.params.id;
+      const deletedMaterial = await deleteMaterial({id: MaterialId});
       res.status(200).json(materialDTO(deletedMaterial));
     }
     catch(err){
